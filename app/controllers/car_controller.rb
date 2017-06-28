@@ -1,4 +1,5 @@
 class CarController < ApplicationController
+  #After user registers, load user cookie and create new car object
   def create
     @user = YAML.load(cookies[:user])
     if !params[:make] || !params[:model] || !params[:year] || !params[:color]

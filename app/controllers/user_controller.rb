@@ -1,4 +1,5 @@
 class UserController < ApplicationController
+  #forces user to register with first and last name
   def register
     if !params[:first] || !params[:last]
       render "register"
