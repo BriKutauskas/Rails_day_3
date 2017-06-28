@@ -1,0 +1,39 @@
+<h1>Here is your car:</h1>
+
+<p style="color:<%= @car.color %>;"><%= @car.show_car %></p>
+
+<form action="accelerate" method="get">
+  <input type="submit" value="Accelerate" >
+</form>
+
+<form action="brake" method="get">
+  <input type="submit" value="Brake" >
+</form>
+
+
+  <p>
+    Speed: <span id = "speed"><%= @car.show_speed %></span>
+  </p>
+
+  <form action="lights" method="get">
+    <input type="submit" value="Lights" >
+  </form>
+
+  <p>
+    Lights : <%= @car.lights %>
+  </p>
+
+<h3>Parking Brake:</h3>
+  <form action="parkingbrake" method="get">
+    <input id="on" name="brake" type="radio" value="true" disabled > On <br>
+    <input id="off" name="brake" type="radio" value="false" checked > Off <br>
+    <input type="submit" value="Submit">
+  </form>
+
+<script>
+  var speed = document.getElementById("speed")
+  if (+speed.innerHTML === 0) {
+    document.getElementById("on").removeAttribute("disabled");
+    document.getElementById("off").removeAttribute("checked");
+  }
+</script>
